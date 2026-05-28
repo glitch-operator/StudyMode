@@ -3,7 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FIXED VIEWPORT -->
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0,
+maximum-scale=1.0,
+user-scalable=no">
 
     <title>Study Mode</title>
 
@@ -15,18 +20,24 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
         }
 
         body {
-            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             background: #070b16;
-            overflow: hidden;
             position: relative;
-            padding: 20px;
+            font-family: 'Manrope', sans-serif;
+            padding: 18px;
         }
 
         /* Background */
@@ -44,22 +55,22 @@
 
         .blur {
             position: absolute;
-            width: 420px;
-            height: 420px;
+            width: 340px;
+            height: 340px;
             border-radius: 50%;
-            background: #0088ff25;
+            background: #0088ff22;
             filter: blur(80px);
-            top: -120px;
+            top: -100px;
             left: -100px;
             animation: float 8s ease-in-out infinite;
         }
 
         .blur2 {
             position: absolute;
-            width: 350px;
-            height: 350px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
-            background: #7c3aed25;
+            background: #7c3aed22;
             filter: blur(80px);
             right: -100px;
             bottom: -100px;
@@ -72,7 +83,7 @@
             }
 
             50% {
-                transform: translateY(30px);
+                transform: translateY(24px);
             }
 
             100% {
@@ -86,7 +97,7 @@
             }
 
             50% {
-                transform: translateY(-30px);
+                transform: translateY(-24px);
             }
 
             100% {
@@ -98,11 +109,11 @@
 
         .card {
             width: 100%;
-            max-width: 430px;
+            max-width: 410px;
 
-            padding: 50px 34px;
+            padding: 42px 24px;
 
-            border-radius: 38px;
+            border-radius: 30px;
 
             background:
                 linear-gradient(180deg,
@@ -111,10 +122,10 @@
 
             border: 1px solid rgba(255, 255, 255, .08);
 
-            backdrop-filter: blur(24px);
+            backdrop-filter: blur(22px);
 
             box-shadow:
-                0 25px 70px rgba(0, 0, 0, .55);
+                0 20px 60px rgba(0, 0, 0, .55);
 
             text-align: center;
 
@@ -124,14 +135,14 @@
             overflow: hidden;
         }
 
-        /* Top Glow Line */
+        /* Top Gradient Line */
 
         .top-line {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
+            height: 3px;
 
             background:
                 linear-gradient(90deg,
@@ -143,8 +154,8 @@
         /* Telegram Circle */
 
         .circle {
-            width: 92px;
-            height: 92px;
+            width: 78px;
+            height: 78px;
 
             margin: auto;
 
@@ -160,22 +171,22 @@
             align-items: center;
 
             color: white;
-            font-size: 40px;
+            font-size: 34px;
 
             box-shadow:
-                0 18px 45px rgba(0, 136, 255, .4);
+                0 15px 35px rgba(0, 136, 255, .35);
 
-            margin-bottom: 30px;
+            margin-bottom: 26px;
         }
 
         /* Heading */
 
         h1 {
-            font-size: 48px;
+            font-size: 40px;
             line-height: 1.1;
             font-weight: 800;
             color: white;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .gradient {
@@ -192,19 +203,19 @@
 
         p {
             color: rgba(255, 255, 255, .65);
-            font-size: 15px;
-            line-height: 1.9;
-            margin-bottom: 34px;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 30px;
         }
 
         /* Button */
 
         .btn {
             width: 100%;
-            height: 64px;
+            height: 58px;
 
             border: none;
-            border-radius: 22px;
+            border-radius: 18px;
 
             background:
                 linear-gradient(135deg,
@@ -213,22 +224,18 @@
                     #7c3aed);
 
             color: white;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
 
             cursor: pointer;
 
-            transition: .35s;
+            transition: .3s;
 
             position: relative;
             overflow: hidden;
 
             box-shadow:
-                0 15px 35px rgba(0, 136, 255, .35);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
+                0 12px 30px rgba(0, 136, 255, .35);
         }
 
         .btn:active {
@@ -242,10 +249,10 @@
             position: absolute;
             top: 0;
             left: -130%;
-            width: 100px;
+            width: 90px;
             height: 100%;
 
-            background: rgba(255, 255, 255, .25);
+            background: rgba(255, 255, 255, .22);
 
             transform: skewX(-25deg);
 
@@ -259,38 +266,38 @@
         /* Footer */
 
         .footer {
-            margin-top: 22px;
-            color: rgba(255, 255, 255, .35);
-            font-size: 11px;
+            margin-top: 18px;
+            color: rgba(255, 255, 255, .32);
+            font-size: 10px;
             letter-spacing: 1px;
         }
 
-        /* Mobile */
+        /* Desktop */
 
-        @media(max-width:600px) {
+        @media(min-width:700px) {
 
             .card {
-                padding: 42px 24px;
-                border-radius: 30px;
+                max-width: 450px;
+                padding: 50px 34px;
             }
 
             h1 {
-                font-size: 40px;
-            }
-
-            .circle {
-                width: 78px;
-                height: 78px;
-                font-size: 34px;
+                font-size: 48px;
             }
 
             p {
-                font-size: 14px;
+                font-size: 15px;
+            }
+
+            .circle {
+                width: 90px;
+                height: 90px;
+                font-size: 40px;
             }
 
             .btn {
-                height: 58px;
-                font-size: 15px;
+                height: 62px;
+                font-size: 16px;
             }
 
         }
