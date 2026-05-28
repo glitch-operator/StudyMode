@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
 
-    <!-- FIXED VIEWPORT -->
     <meta name="viewport" content="width=device-width,
 initial-scale=1.0,
 maximum-scale=1.0,
@@ -23,57 +22,81 @@ user-scalable=no">
             -webkit-tap-highlight-color: transparent;
         }
 
-        html,
-        body {
+        html {
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
 
         body {
+            width: 100%;
+            min-height: 100vh;
+
+            overflow-x: hidden;
+            overflow-y: hidden;
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             background: #070b16;
+
             position: relative;
+
             font-family: 'Manrope', sans-serif;
+
             padding: 18px;
         }
 
         /* Background */
 
         .bg {
-            position: absolute;
+            position: fixed;
             inset: 0;
+
             background:
                 radial-gradient(circle at top left, #0088ff22, transparent 30%),
                 radial-gradient(circle at bottom right, #7c3aed22, transparent 35%),
                 #070b16;
+
+            overflow: hidden;
         }
 
-        /* Floating Blur */
+        /* Floating Blurs */
 
         .blur {
             position: absolute;
-            width: 340px;
-            height: 340px;
+
+            width: 260px;
+            height: 260px;
+
             border-radius: 50%;
+
             background: #0088ff22;
-            filter: blur(80px);
-            top: -100px;
-            left: -100px;
+
+            filter: blur(70px);
+
+            top: -80px;
+            left: -80px;
+
             animation: float 8s ease-in-out infinite;
         }
 
         .blur2 {
             position: absolute;
-            width: 300px;
-            height: 300px;
+
+            width: 240px;
+            height: 240px;
+
             border-radius: 50%;
+
             background: #7c3aed22;
-            filter: blur(80px);
-            right: -100px;
-            bottom: -100px;
+
+            filter: blur(70px);
+
+            right: -80px;
+            bottom: -80px;
+
             animation: float2 9s ease-in-out infinite;
         }
 
@@ -109,7 +132,7 @@ user-scalable=no">
 
         .card {
             width: 100%;
-            max-width: 410px;
+            max-width: 420px;
 
             padding: 42px 24px;
 
@@ -139,8 +162,10 @@ user-scalable=no">
 
         .top-line {
             position: absolute;
+
             top: 0;
             left: 0;
+
             width: 100%;
             height: 3px;
 
@@ -151,7 +176,7 @@ user-scalable=no">
                     #00d2ff);
         }
 
-        /* Telegram Circle */
+        /* Telegram Icon */
 
         .circle {
             width: 78px;
@@ -171,6 +196,7 @@ user-scalable=no">
             align-items: center;
 
             color: white;
+
             font-size: 34px;
 
             box-shadow:
@@ -183,9 +209,13 @@ user-scalable=no">
 
         h1 {
             font-size: 40px;
+
             line-height: 1.1;
+
             font-weight: 800;
+
             color: white;
+
             margin-bottom: 16px;
         }
 
@@ -203,8 +233,11 @@ user-scalable=no">
 
         p {
             color: rgba(255, 255, 255, .65);
+
             font-size: 14px;
+
             line-height: 1.8;
+
             margin-bottom: 30px;
         }
 
@@ -212,9 +245,11 @@ user-scalable=no">
 
         .btn {
             width: 100%;
+
             height: 58px;
 
             border: none;
+
             border-radius: 18px;
 
             background:
@@ -224,7 +259,9 @@ user-scalable=no">
                     #7c3aed);
 
             color: white;
+
             font-size: 15px;
+
             font-weight: 700;
 
             cursor: pointer;
@@ -232,10 +269,15 @@ user-scalable=no">
             transition: .3s;
 
             position: relative;
+
             overflow: hidden;
 
             box-shadow:
                 0 12px 30px rgba(0, 136, 255, .35);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
         }
 
         .btn:active {
@@ -246,9 +288,12 @@ user-scalable=no">
 
         .btn::before {
             content: '';
+
             position: absolute;
+
             top: 0;
             left: -130%;
+
             width: 90px;
             height: 100%;
 
@@ -267,8 +312,11 @@ user-scalable=no">
 
         .footer {
             margin-top: 18px;
+
             color: rgba(255, 255, 255, .32);
+
             font-size: 10px;
+
             letter-spacing: 1px;
         }
 
@@ -301,6 +349,16 @@ user-scalable=no">
             }
 
         }
+
+        /* Extra Safety */
+
+        body::before,
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -309,6 +367,7 @@ user-scalable=no">
     <div class="bg"></div>
 
     <div class="blur"></div>
+
     <div class="blur2"></div>
 
     <div class="card">
@@ -320,7 +379,9 @@ user-scalable=no">
         </div>
 
         <h1>
-            <span class="gradient">Study Mode</span>
+            <span class="gradient">
+                Study Mode
+            </span>
         </h1>
 
         <p>
@@ -329,7 +390,9 @@ user-scalable=no">
         </p>
 
         <button class="btn" onclick="window.open('https://t.me/YOUR_CHANNEL_USERNAME')">
+
             Join Telegram Channel
+
         </button>
 
         <div class="footer">
